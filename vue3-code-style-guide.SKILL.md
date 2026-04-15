@@ -1,6 +1,6 @@
 ---
 name: code-style-guide
-description: "Apply code style conventions from chinaone-ui-libs and brms-ui projects. Use when: writing new code, refactoring components, ensuring consistent formatting, creating Vue/TypeScript files, styling with Tailwind CSS."
+description: "Use when: writing new code, refactoring components, ensuring consistent formatting, creating Vue/TypeScript files, styling with Tailwind CSS."
 ---
 
 # Code Style Guide
@@ -18,9 +18,10 @@ A comprehensive skill for maintaining consistent code style across Vue 3 + TypeS
 
 ```typescript
 // ✓ Correct
+import { defineComponent } from 'vue'
+
 const getValue = x => x.property
 const message = 'Hello World'
-import { defineComponent } from 'vue'
 
 // ✗ Avoid
 const getValue = (x) => x.property;
@@ -89,7 +90,9 @@ const props = withDefaults(defineProps<CoModalProps>(), {
 // ✓ Correct
 const getProjectData = async (isPush?: boolean) => {
   loading.value = true
+
   const res = await postProjectQuery(searchForm.value)
+
   loading.value = false
   if (!res.success) return
   // ...
